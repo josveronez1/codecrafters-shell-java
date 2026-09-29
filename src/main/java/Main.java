@@ -21,7 +21,7 @@ public class Main {
                         String path = System.getenv("PATH");
                         String[] pathDirs = path.split(":");
                         boolean found = false;
-                        for(int i=0; 1<pathDirs.length; i++) {
+                        for(int i=0; i<pathDirs.length; i++) {
                             File file = new File(pathDirs[i], typeCommand);
 
                             if (file.exists() && file.canExecute()) {
