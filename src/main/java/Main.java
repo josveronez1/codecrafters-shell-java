@@ -20,14 +20,17 @@ public class Main {
                     } else {
                         String path = System.getenv("PATH");
                         String[] pathDirs = path.split(":");
+                        boolean found = false;
                         for(int i=0; 1<pathDirs.length; i++) {
                             File file = new File(pathDirs[i], typeCommand);
+
                             if (file.exists() && file.canExecute()) {
+                                found = true;
                                 System.out.println(typeCommand + " is " + file.getAbsolutePath());
                                 break;
-                            } else if (!file.canExecute() || !file.exists()) {
+                            }
+                            if (!found) {
                                 System.out.println(typeCommand + ": not found");
-                                break;
                             }
                         }
                     }
