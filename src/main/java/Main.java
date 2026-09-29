@@ -24,8 +24,6 @@ public class Main {
                             File file = new File(pathDirs[i], typeCommand);
                             if (file.exists() && file.canExecute()) {
                                 System.out.println(typeCommand + " is " + file.getAbsolutePath());
-                            } else {
-                                System.out.printf("%s: not found\n", typeCommand);
                                 break;
                             }
                         }
