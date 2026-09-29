@@ -7,6 +7,10 @@ public class Main {
         while(true) {
             System.out.print("$ ");
             String command = sc.nextLine();
+
+            if(command.equals("exit")) {
+                break;
+            }
             System.out.printf("%s: command not found\n", command);
         }
     }
