@@ -13,10 +13,12 @@ public class Main {
                 case String s when s.startsWith("echo"):
                     String echoString = command.substring(5);
                     System.out.println(echoString);
+                    break;
                 case "exit":
                     break mainLoop;
                 default:
                     System.out.printf("%s: command not found\n", command);
+                    break;
             }
 
 
