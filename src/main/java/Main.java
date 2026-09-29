@@ -26,7 +26,7 @@ public class Main {
                                 System.out.println(typeCommand + " is " + file.getAbsolutePath());
                                 break;
                             } else {
-                                System.out.printf("%s: not found\n", typeCommand);
+                                //System.out.printf("%s: not found\n", typeCommand);
                                 break;
                             }
                         }
