@@ -1,3 +1,4 @@
+import java.io.File;
 import java.util.Scanner;
 
 public class Main {
@@ -12,13 +13,23 @@ public class Main {
             switch(command) {
                 case String s when s.startsWith("type"):
                     String typeCommand = command.substring(5);
+
                     if (typeCommand.equals("echo") || typeCommand.equals("exit") || typeCommand.equals("type")){
                         System.out.printf("%s is a shell builtin\n", typeCommand);
                         break;
                     } else {
-                        System.out.printf("%s: not found\n", typeCommand);
-                        break;
+                        String path = System.getenv("PATH");
+                        String[] pathDirs = path.split(":");
+
+                        for(int i=0; 1<pathDirs.length; i++) {
+                            File file = new File(pathDirs[i], typeCommand);
+                            if (file.exists() && file.canExecute()) {
+                                System.out.println(typeCommand + " is " + file.getAbsolutePath());
+                            }
+                        }
                     }
+                    System.out.printf("%s: not found\n", typeCommand);
+                    break;
                 case String s when s.startsWith("echo"):
                     String echoString = command.substring(5);
                     System.out.println(echoString);
