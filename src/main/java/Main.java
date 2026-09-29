@@ -25,7 +25,7 @@ public class Main {
                             if (file.exists() && file.canExecute()) {
                                 System.out.println(typeCommand + " is " + file.getAbsolutePath());
                                 break;
-                            } else {
+                            } else if (!file.canExecute() || !file.exists()) {
                                 System.out.println(typeCommand + ": not found");
                                 break;
                             }
