@@ -29,9 +29,10 @@ public class Main {
                                 System.out.println(typeCommand + " is " + file.getAbsolutePath());
                                 break;
                             }
-                            if (!found) {
-                                System.out.println(typeCommand + ": not found");
-                            }
+
+                        }
+                        if (!found) {
+                            System.out.println(typeCommand + ": not found");
                         }
                     }
                     break;
