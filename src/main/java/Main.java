@@ -10,6 +10,15 @@ public class Main {
             String command = sc.nextLine();
 
             switch(command) {
+                case String s when s.startsWith("type"):
+                    String typeCommand = command.substring(5);
+                    if (typeCommand.equals("echo") || typeCommand.equals("exit")){
+                        System.out.printf("%s is a shell builtin\n", typeCommand);
+                        break;
+                    } else {
+                        System.out.printf("%s: not found\n", typeCommand);
+                        break;
+                    }
                 case String s when s.startsWith("echo"):
                     String echoString = command.substring(5);
                     System.out.println(echoString);
