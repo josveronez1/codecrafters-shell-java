@@ -20,15 +20,17 @@ public class Main {
                     } else {
                         String path = System.getenv("PATH");
                         String[] pathDirs = path.split(":");
-                        for(int i=0; 1<pathDirs.length; i++) {
+                        for (int i = 0; 1 < pathDirs.length; i++) {
                             File file = new File(pathDirs[i], typeCommand);
                             if (file.exists() && file.canExecute()) {
                                 System.out.println(typeCommand + " is " + file.getAbsolutePath());
                                 break;
+                            } else {
+                                System.out.printf("%s: not found\n", typeCommand);
+                                break;
                             }
                         }
                     }
-                    System.out.printf("%s: not found\n", typeCommand);
                     break;
                 case String s when s.startsWith("echo"):
                     String echoString = command.substring(5);
