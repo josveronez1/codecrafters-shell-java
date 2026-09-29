@@ -12,7 +12,7 @@ public class Main {
             switch(command) {
                 case String s when s.startsWith("type"):
                     String typeCommand = command.substring(5);
-                    if (typeCommand.equals("echo") || typeCommand.equals("exit")){
+                    if (typeCommand.equals("echo") || typeCommand.equals("exit") || typeCommand.equals("type")){
                         System.out.printf("%s is a shell builtin\n", typeCommand);
                         break;
                     } else {
