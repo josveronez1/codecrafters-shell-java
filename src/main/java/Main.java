@@ -54,7 +54,6 @@ public class Main {
                         System.out.printf("%s: command not found\n", command);
                         break;
                     }
-
             }
         }
     }
