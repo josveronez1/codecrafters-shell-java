@@ -9,7 +9,7 @@ public class Main {
         mainLoop:
         while(true) {
             System.out.print("$ ");
-            String command = sc.nextLine();
+            String command = sc.nextLine().trim();
 
             String[] parts = command.split(" ");
             String baseCommand = parts[0];
