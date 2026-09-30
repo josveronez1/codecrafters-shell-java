@@ -49,11 +49,10 @@ public class Main {
                 default:
                     if(baseCommand != null && getPath(baseCommand) != null){
                         System.out.printf("Program was passed %d args (including program name).\n", parts.length);
-                        break;
                     } else {
                         System.out.printf("%s: command not found\n", command);
-                        break;
                     }
+                    break;
             }
         }
     }
