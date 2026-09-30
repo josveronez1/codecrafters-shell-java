@@ -1,6 +1,7 @@
 import java.io.File;
 import java.util.Scanner;
 
+
 public class Main {
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
@@ -9,6 +10,9 @@ public class Main {
         while(true) {
             System.out.print("$ ");
             String command = sc.nextLine();
+
+            String[] parts = command.split(" ");
+            String baseCommand = parts[0];
 
             switch(command) {
                 case String s when s.startsWith("type"):
@@ -43,11 +47,23 @@ public class Main {
                 case "exit":
                     break mainLoop;
                 default:
+                    if(baseCommand != null && getPath(baseCommand) != null)
                     System.out.printf("%s: command not found\n", command);
                     break;
             }
-
-
         }
+    }
+    public static String getPath(String comm) {
+        String path = System.getenv("PATH");
+        String[] dirs = path.split(":");
+
+        for (String dir : dirs) {
+            File file = new File(dir, comm);
+
+            if(file.exists() && file.canExecute()) {
+                return file.getAbsolutePath();
+            }
+        }
+        return null;
     }
 }
