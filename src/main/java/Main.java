@@ -53,7 +53,6 @@ public class Main {
                     } else {
                         System.out.printf("%s: command not found", command);
                     }
-                    break;
             }
         }
     }
