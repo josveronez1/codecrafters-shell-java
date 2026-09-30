@@ -47,7 +47,9 @@ public class Main {
                 case "exit":
                     break mainLoop;
                 default:
-                    if(baseCommand != null && getPath(baseCommand) != null)
+                    if(baseCommand != null && getPath(baseCommand) != null){
+                        System.out.printf("Program was passed %d args (including program name).", parts.length );
+                    }
                     System.out.printf("%s: command not found\n", command);
                     break;
             }
