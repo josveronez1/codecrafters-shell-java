@@ -52,6 +52,7 @@ public class Main {
                         break;
                     } else {
                         System.out.printf("%s: command not found", command);
+                        break mainLoop;
                     }
             }
         }
