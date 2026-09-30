@@ -51,7 +51,7 @@ public class Main {
                         System.out.printf("\nProgram was passed %d args (including program name).", parts.length);
                         break;
                     } else {
-                        System.out.printf("\n%s: command not found", command);
+                        System.out.printf("%s: command not found", command);
                     }
                     break;
             }
