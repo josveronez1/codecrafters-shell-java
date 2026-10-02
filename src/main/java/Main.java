@@ -15,6 +15,9 @@ public class Main {
             String baseCommand = parts[0];
 
             switch(command) {
+                case String s when s.equals("pwd"):
+                    System.out.println(System.getProperty("user.dir"));
+                    break;
                 case String s when s.startsWith("type"):
                     String typeCommand = command.substring(5);
 
